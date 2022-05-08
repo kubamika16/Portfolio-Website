@@ -1,0 +1,133 @@
+<!-- LINK DO PORTFOLIO -->
+<!-- https://www.youtube.com/watch?v=_xkSvufmjEs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jakub's Portfolio Website</title>
+    <!-- Dzięki temu strona będzie wyglądać tak samo na kazdej przeglądarce -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"
+    />
+
+    <!-- Ikony -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+      integrity="sha256-46qynGAkLSFpVbEBog43gvNhffOj+BmwXdxFgVK/Kvc"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/79a5f6bfc5.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap"
+    />
+
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- Moje zdjęcie -->
+      <div class="logo">
+        <a href="/index.html"> <img src="/images/me.png" alt="" /></a>
+      </div>
+
+      <!-- Przycisk nawigacji w prawym górnym rogu strony -->
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="../index.html" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="../index.html#services" class="nav__link">My Services</a>
+          </li>
+          <li class="nav__item">
+            <a href="../index.html#about" class="nav__link">About me</a>
+          </li>
+          <li class="nav__item">
+            <a href="../index.html#work" class="nav__link">My Work</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Introduction -->
+    <section class="intro">
+      <!-- Druga klasa będzie aktualizacją posiadająca modyfikacje dla klasy pierwszej -->
+      <h1 class="section__title section__title--intro">
+        Webpage about <strong>University</strong>
+      </h1>
+
+      <!-- Druga klasa będzie aktualizacją posiadająca modyfikacje dla klasy pierwszej -->
+      <p class="section__subtitle section__subtitle--intro">
+        <a href="/University-Website/index.html" target="_blank"
+          >Zobacz pracę
+        </a>
+      </p>
+      <img
+        src="/University-Website/portfolio-images/uni-long.jpeg"
+        alt="Portfolio image"
+        class="intro__img"
+      />
+    </section>
+
+    <!-- Individual item in portfolio -->
+    <div class="portfolio-item-individual">
+      <p>
+        Responsywna strona została stworzona w celu prezentacji w jaki sposób
+        moze być utworzona strona przykładowego uniwersytetu. Mozna zauwazyć
+        pięć róznych stron internetowych połączone ze sobą w panelu
+        nawigacyjnym. Panel jest także responsywny. Przy zmniejszonej stronie
+        można zauważyć pojawiający się przycisk menu po prawej stronie.
+      </p>
+
+      <p>
+        Cały projekt strony był przedstawiony na youtube (<a
+          href="https://www.youtube.com/watch?v=oYRda7UtuhA&t=1s"
+          target="_blank"
+          >tutorial opisujący tworzenie strony</a
+        >).
+      </p>
+
+      <img src="/University-Website/portfolio-images/uni-wide.jpeg" alt="" />
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <a href="mailto:kuba.mika16@gmail.com" class="footer__link"
+        >kuba.mika16@gmail.com</a
+      >
+      <ul class="social-list">
+        <li class="social-list__item">
+          <a href="#" class="social-list__link"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+        </li>
+        <li class="social-list__item">
+          <a href="#" class="social-list__link"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+        </li>
+        <li class="social-list__item">
+          <a href="#" class="social-list__link"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+        </li>
+      </ul>
+    </footer>
+
+    <script src="/js/index.js"></script>
+  </body>
+</html>

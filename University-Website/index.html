@@ -1,0 +1,247 @@
+<!-- 1 Sesja w pociągu (HTML, CSS), 30/03/2022 -->
+
+<!-- https://www.youtube.com/watch?v=Xh1WrXxEWjc&t=0s -->
+
+<!-- Zakończyłem 06:28 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/79a5f6bfc5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section class="header">
+      <nav>
+        <a href="index.html"><img src="img/logo.png" alt="" /> </a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="course.html">COURSE</a></li>
+            <li><a href="blog.html">BLOG</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+        <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+      </nav>
+
+      <div class="text-box">
+        <h1>World's Biggest University</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ea
+          quam commodi ut iusto quis? <br />
+          Accusamus labore dolores doloribus veritatis aliquam error laboriosam
+          dolor porro commodi, <br />
+          ullam, explicabo praesentium consequatur!
+        </p>
+        <a href="#" class="hero-btn">Visit Us to Know More</a>
+      </div>
+    </section>
+
+    <section class="course">
+      <h1>Courses We Offer</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
+        quisquam hic excepturi fugiat maiores et beatae, dolor assumenda?
+        Aliquid vitae hic perspiciatis laborum temporibus laboriosam, delectus
+        voluptates dolores quo accusantium?
+      </p>
+
+      <div class="row">
+        <div class="course-col">
+          <h3>Intermediate</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum
+            accusamus omnis saepe? Sunt, reprehenderit quasi? Aperiam dolore quo
+            nobis, expedita iure dolorem molestiae animi odio voluptas
+            laboriosam! Architecto, adipisci sunt?
+          </p>
+        </div>
+        <div class="course-col">
+          <h3>Degree</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum
+            accusamus omnis saepe? Sunt, reprehenderit quasi? Aperiam dolore quo
+            nobis, expedita iure dolorem molestiae animi odio voluptas
+            laboriosam! Architecto, adipisci sunt?
+          </p>
+        </div>
+        <div class="course-col">
+          <h3>Post graduation</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum
+            accusamus omnis saepe? Sunt, reprehenderit quasi? Aperiam dolore quo
+            nobis, expedita iure dolorem molestiae animi odio voluptas
+            laboriosam! Architecto, adipisci sunt?
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="campus">
+      <h1>Our Global Campus</h1>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis
+        magni, similique ducimus quos consequatur possimus.
+      </p>
+
+      <div class="row">
+        <div class="campus-col">
+          <img src="img/london.png" alt="London" />
+          <div class="layer">
+            <h3>LONDON</h3>
+          </div>
+        </div>
+
+        <div class="campus-col">
+          <img src="img/newyork.png" alt="New York" />
+          <div class="layer">
+            <h3>NEW YORK</h3>
+          </div>
+        </div>
+
+        <div class="campus-col">
+          <img src="img/washington.png" alt="Washington" />
+          <div class="layer">
+            <h3>WASHINGTON</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facilities -->
+
+    <section class="facilities">
+      <h1>Our facilities</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem laborum
+        dignissimos nihil itaque incidunt? Repellendus vel ut obcaecati alias
+        soluta.
+      </p>
+
+      <div class="row">
+        <div class="facilities-col">
+          <img src="img/library.png" alt="" />
+          <h3>World Class Library</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa
+            incidunt temporibus minus laborum adipisci maiores repellendus
+            explicabo beatae fugiat dolorum.
+          </p>
+        </div>
+
+        <div class="facilities-col">
+          <img src="img/basketball.png" alt="" />
+          <h3>Largest Play Ground</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa
+            incidunt temporibus minus laborum adipisci maiores repellendus
+            explicabo beatae fugiat dolorum.
+          </p>
+        </div>
+
+        <div class="facilities-col">
+          <img src="img/cafeteria.png" alt="" />
+          <h3>Tasty and Healthy Food</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa
+            incidunt temporibus minus laborum adipisci maiores repellendus
+            explicabo beatae fugiat dolorum.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <h1>What Our Student Says</h1>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, aliquam
+        vel error accusantium fugiat ipsam.
+      </p>
+
+      <div class="row">
+        <div class="testimonial-col">
+          <img src="img/user1.jpg" alt="user1" />
+          <div>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Accusamus, officia.
+            </p>
+            <h3>Christine Berkley</h3>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+        </div>
+        <div class="testimonial-col">
+          <img src="img/user2.jpg" alt="user1" />
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ipsa
+              ea quia, ducimus quidem at placeat blanditiis, harum eum eveniet,
+              asperiores modi aut velit laboriosam nobis molestiae!
+            </p>
+            <h3>David Byer</h3>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call To Action -->
+    <section class="cta">
+      <h1>
+        Enroll For Our Various Online Courses <br />
+        Anywhere From The World
+      </h1>
+      <a href="" class="hero-btn">CONTACT US</a>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+      <h4>About Us</h4>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+        veritatis, voluptatibus nisi, officiis adipisci voluptas obcaecati vero
+        dolores nesciunt <br />
+        consequatur corrupti saepe dignissimos magnam odio! Cupiditate
+        perferendis dolorum fugiat odio.
+      </p>
+      <div class="icons">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-linkedin-in"></i>
+      </div>
+    </section>
+
+    <script src="index.js"></script>
+  </body>
+</html>

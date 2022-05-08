@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  position: relative;
+  max-width: 80px;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+}
+
+header ul li {
+  list-style: none;
+}
+
+header ul li a {
+  display: inline-block;
+  color: #333;
+  font-weight: 300;
+  margin-left: 40px;
+  text-decoration: none;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.content .coffeeGeneral {
+  display: flex;
+  width: 100%;
+  max-height: 400px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background: #1f3933;
+  align-items: center;
+}
+
+.content .coffeeGeneral .left {
+  display: flex;
+  max-width: 30%;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.content .coffeeGeneral .left img {
+  width: 100%;
+}
+
+.content .coffeeGeneral .right h1 {
+  font-size: 2.5em;
+  font-weight: 550;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.content .coffeeGeneral .right h2 {
+  color: #cfcfcf;
+  font-weight: 300;
+}
+
+.coffeeType {
+  position: relative;
+  display: flex;
+  margin-top: 40px;
+  justify-content: space-between;
+}
+
+.coffeeType .size {
+  width: 35%;
+  margin-left: 8%;
+}
+
+.coffeeType .customizations {
+  width: 35%;
+  margin-right: 8%;
+}
+
+.coffeeType .headings {
+  padding-bottom: 10px;
+  border-bottom: 4px solid rgba(0, 83, 0, 0.4);
+  margin-bottom: 40px;
+}
+
+.coffeeType .headings h2 {
+  font-weight: 540;
+}
+
+.coffeeType .fourSizes {
+  display: flex;
+}
+
+.coffeeType .fourSizes ul {
+  position: relative;
+  display: flex;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+.coffeeType .fourSizes ul li {
+  list-style: none;
+  color: #333;
+  margin-right: 40px;
+}
+
+.coffeeType .fourSizes ul li p {
+  padding-top: 10px;
+}
+
+.coffeeType .fourSizes ul li i {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.coffeeType .fourSizes .sizeName {
+  font-weight: 700;
+}
+
+.coffeeType .fourSizes .sizeOz {
+  font-size: 15px;
+}
+
+.size .location {
+  position: relative;
+  display: flex;
+  color: rgb(83, 83, 83);
+}
+
+.size .location i {
+  margin-right: 10px;
+}
+
+.circle {
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: #e6e7ed;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+#short {
+  position: absolute;
+  align-items: center;
+  top: 30%;
+  left: 30%;
+}
+
+#tall {
+  position: absolute;
+  align-items: center;
+  top: 30%;
+  left: 30%;
+  padding-bottom: 15px;
+}
+
+#grande {
+  position: absolute;
+  align-items: center;
+  top: 30%;
+  left: 30%;
+  padding-bottom: 20px;
+}
+
+#venti {
+  position: absolute;
+  align-items: center;
+  top: 25%;
+  left: 30%;
+  padding-bottom: 25px;
+}
+
+.circle:hover {
+  transform: translateY(-10px);
+}

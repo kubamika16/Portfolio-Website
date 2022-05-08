@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess The Number</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500&family=Poppins:wght@100;200;300;400;600;700&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="content">
+      <div class="first">
+        <button onclick="newGame()">Again!</button>
+        <p>(Between 1 and 20)</p>
+      </div>
+      <div class="second">
+        <h1>Guess My Number</h1>
+        <div class="question-mark">
+          <div class="line"></div>
+          <p>?</p>
+        </div>
+      </div>
+      <div class="third">
+        <div class="left">
+          <input
+            type="text"
+            name=""
+            id="input"
+            class="input"
+            autofocus
+            onkeydown="enterValue(this)"
+          />
+          <br />
+          <button class="button" onclick="getVal()" id="checkButton">
+            Check!
+          </button>
+        </div>
+        <div class="right">
+          <p class="start_guessing">Start gueessing...</p>
+          <p>💯 Score: <span class="score">20</span></p>
+          <p>🥇 Highscore: <span class="highscore">0</span></p>
+        </div>
+      </div>
+    </section>
+    <script src="index.js"></script>
+  </body>
+</html>

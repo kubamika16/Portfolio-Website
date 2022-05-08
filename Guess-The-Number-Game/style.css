@@ -1,0 +1,142 @@
+/* Fonts */
+/* font-family: 'M PLUS 1', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'VT323', monospace; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "VT323", monospace;
+}
+
+body {
+  background-color: black;
+}
+
+.content {
+  position: relative;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.first {
+  height: 15%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.first button {
+  height: 50px;
+  width: 150px;
+  margin-top: 20px;
+  margin-left: 20px;
+
+  font-size: 2em;
+
+  background-color: white;
+  font-weight: 800;
+}
+
+.first p {
+  margin-top: 20px;
+  margin-right: 20px;
+
+  font-size: 1.5em;
+  color: white;
+}
+
+.second {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  height: 20%;
+
+  text-align: center;
+  font-size: 3em;
+  color: white;
+}
+
+.second .question-mark {
+  width: 80px;
+  height: 80px;
+
+  margin-top: 30px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: white;
+  color: black;
+
+  position: relative;
+}
+
+.question-mark .line {
+  position: absolute;
+  width: 120vh;
+  height: 10px;
+  background-color: white;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.question-mark p {
+  position: absolute;
+  background-color: inherit;
+  font-size: 1.7em;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.third {
+  margin-top: 100px;
+  height: 65%;
+  display: flex;
+  justify-content: space-between;
+
+  color: white;
+}
+
+.left {
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.left .input {
+  width: 200px;
+  height: 100px;
+  border: 3px solid white;
+  background-color: black;
+
+  margin-bottom: 30px;
+  color: white;
+  font-size: 5em;
+  text-align: center;
+}
+
+.left button {
+  width: 150px;
+  height: 50px;
+
+  color: black;
+  background-color: white;
+  font-size: 1.7em;
+
+  margin: 0 25px;
+}
+
+.right {
+  width: 50%;
+  font-size: 2em;
+}
+
+.start_guessing {
+  margin-bottom: 60px;
+}

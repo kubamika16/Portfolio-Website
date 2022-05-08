@@ -1,0 +1,196 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #171a20;
+  font-family: "M PLUS 1", sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+}
+
+.desktop {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .desktop {
+    display: initial;
+  }
+}
+
+header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  padding: 5px 20px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+}
+
+a.logo {
+  height: 12px;
+  width: 100px;
+  /* Odziedziczenie koloru. W body jest kolor czarny, więc dzięki temu odziedziczy się kolor czarny */
+  color: inherit;
+}
+
+header a {
+  /* Równiez dziedziczenie */
+  color: inherit;
+}
+
+header nav a {
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+header nav.center {
+  text-align: center;
+}
+
+header nav.right {
+  text-align: right;
+}
+
+section {
+  height: 100vh;
+  /* Zdjęcie nie jest ogromne, ale dopasowuje się rozmiarem do sekcji  */
+  background-size: cover;
+  /* Zdjęcie jest całkowicie na środku */
+  background-position: center center;
+}
+
+section .content {
+  /* Dzięki temu poruszają się napisy (np. model 3, model s)  */
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  transition: opacity 0.1s ease;
+
+  width: 100%;
+  height: 100vh;
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+  text-align: center;
+  display: grid;
+  /* Dzięki temu pierwszy wiersz (Model 3) będzie miał miejsca tyle ile czcionka, to samo ostatni wiersz (przyciski), a auto będzie wypełniało resztę miejsca */
+  grid-template-rows: min-content auto min-content;
+}
+
+/* Dzięki temu poruszają się napisy (np. model 3, model s)  */
+section.active .content {
+  opacity: 1;
+}
+
+section h1 {
+  font-size: 3rem;
+}
+
+section a {
+  color: inherit;
+}
+
+section .buttons a {
+  display: block;
+  background-color: #eee;
+  color: inherit;
+  padding: 12px 50px;
+  border-radius: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+section .buttons {
+  display: grid;
+  row-gap: 20px;
+  margin: 0 40px;
+}
+
+/* Dzięki ':first-child', jak wskazuje nazwa mozna ustawić pierwszy element (pierwsze dziecko) */
+section .buttons a:first-child {
+  background-color: #444;
+  color: #fff;
+}
+
+@media (min-width: 1200px) {
+  section .buttons {
+    max-width: 640px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+  }
+}
+
+/* Panel Menu po prawej stronie gdy zmniejszymy stronę */
+
+aside {
+  background: #fff;
+
+  /* Ustawienie panelu po prawej stronie */
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  /* Dzięki temu boczne menu jest przesunięte w prawą stronę o swoją własną szerokość (320px)  */
+  right: -320px;
+
+  /* Jakimś za pomocą tranzycji menu powoli przechodzi na z prawej na lewą */
+  transition: right 0.4s ease;
+
+  width: 320px;
+  padding: 50px 40px;
+  /* Z index - dzięki temu menu będzie ustawiane jak najwcześniej */
+  z-index: 4;
+
+  height: 100vh;
+}
+
+aside.active {
+  right: 0;
+}
+
+aside a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  padding: 8px 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+aside button.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  font-size: 24px;
+  border: 0;
+  background-color: transparent;
+
+  padding: 10px;
+  font-family: sans-serif;
+  font-weight: 100;
+
+  cursor: pointer;
+}
+
+.backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(5px);
+}
+
+.backdrop.active {
+  display: block;
+}

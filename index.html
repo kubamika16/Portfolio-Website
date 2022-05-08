@@ -1,0 +1,263 @@
+<!-- PORTFOLIO -->
+<!-- https://www.youtube.com/watch?v=_xkSvufmjEs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jakub's Portfolio Website</title>
+    <!-- Dzięki temu strona będzie wyglądać tak samo na kazdej przeglądarce -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"
+    />
+
+    <!-- Ikony -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+      integrity="sha256-46qynGAkLSFpVbEBog43gvNhffOj+BmwXdxFgVK/Kvc"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/79a5f6bfc5.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Moje zdjęcie -->
+      <div class="logo">
+        <a href="index.html"> <img src="images/me.png" alt="" /></a>
+      </div>
+
+      <!-- Przycisk nawigacji w prawym górnym rogu strony -->
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+          <li class="nav__item">
+            <a href="#services" class="nav__link">My Services</a>
+          </li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About me</a>
+          </li>
+          <li class="nav__item">
+            <a href="#work" class="nav__link">My Work</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Introduction -->
+    <section class="intro" id="home">
+      <!-- Druga klasa będzie aktualizacją posiadająca modyfikacje dla klasy pierwszej -->
+      <h1 class="section__title section__title--intro">
+        Hi, I am <strong>Jakub Mika</strong>
+      </h1>
+
+      <!-- Druga klasa będzie aktualizacją posiadająca modyfikacje dla klasy pierwszej -->
+      <p class="section__subtitle section__subtitle--intro">front-end dev</p>
+      <img src="images/me.jpg" alt="A picture of me" class="intro__img" />
+    </section>
+
+    <!-- My services -->
+    <section class="my-services" id="services">
+      <h2 class="section__title section__title--services">Czym się zajmuję</h2>
+      <div class="services">
+        <div class="service">
+          <h3>HTML + CSS</h3>
+          <p>
+            Tworzenie stron internetowych zawsze mnie ciekawiło. Poprzez kursy i
+            lekcje przez internet nauczyłem się solidnych podstaw dotyczących
+            front-endu.
+          </p>
+        </div>
+
+        <div class="service">
+          <h3>JavaScript</h3>
+          <p>
+            Javascript to język z którym obcowałem najdłuzej. Jest to język
+            bardzo dynamiczny i cały czas rozwijający się. Pozwolił mi na
+            ustawianie na stronach internetowych ciekawych funkcji które
+            pozwalają na lepszą interakcję użytkownika.
+          </p>
+        </div>
+
+        <div class="service">
+          <h3>VUI</h3>
+          <p>
+            VUI (Voice User Interface) to dziedzina programowania która
+            interesuje mnie najbardziej. Prawie każdy słyszał już o asystentach
+            głosowych takich jak Siri, Alexa czy Asystent Google. Firmy, takie
+            jak Google czy Amazon pozwalają deweloperom na tworzenie gier czy
+            aplikacji co jeszcze bardziej wzbogaca funkcjonalność tych
+            asystentów.
+          </p>
+        </div>
+      </div>
+
+      <a href="#work" class="btn">My Work</a>
+    </section>
+
+    <!-- About me -->
+    <section class="about-me" id="about">
+      <!-- Druga klasa będzie aktualizacją posiadająca modyfikacje dla klasy pierwszej -->
+      <h2 class="section__title section__title--about">O mnie</h2>
+      <p class="section__subtitle section__subtitle--about">
+        Programista mieszkający w Krakowie
+      </p>
+      <div class="about-me__body">
+        <p>
+          Nazywam się Jakub Mika. Mam 23 lata i pochodzę z Krakowa, a dokładnie
+          jego okolic. Programowaniem i tworzeniem stron internetowych
+          zainteresowałem się na początku 2021 roku. Znajomy ze studiów
+          zaproponował mi kilkudziesięcio-godzinny kurs na Udemy dotyczący
+          języka Javascript. Nie był to prosty kurs, ponieważ był prowadzony w
+          języku angielskim. Nie mam problemu z tym językiem, choć niektóre
+          zagadnienia wymagały kilkukrotnego przestudiowania. Po przerobieniu
+          tego kursu i kilku innych kursów z YouTube zacząłem robić projekty
+          które można znaleźć w sekcji "Moje Prace". W przyszłości chciałbym
+          nauczyć się biblioteki React oraz tworzenia stron za pomocą WordPress.
+        </p>
+        <p>
+          Dodatkowo moimi największymi zainteresowaniami jest sport, a
+          dokładniej bieganie i piłka nożna. Ze ścisłych hobby najbardziej
+          interesuje mnie makroekonomia.
+        </p>
+      </div>
+
+      <img src="images/me2.jpg" alt="Me" class="about-me__img" />
+    </section>
+
+    <section class="my-work" id="work">
+      <h2 class="section__title">Moje Prace</h2>
+      <p class="section__subtitle">Selekcja prac które wykonałem</p>
+
+      <!-- Portfolio item 1 -->
+      <div class="portfolio">
+        <!-- Portfolio item 1 -->
+        <a
+          href="/Starbucks/portfolio-item-starbucks.html"
+          class="portfolio__item"
+          target="_blank"
+        >
+          <!-- Img: 1200x800 -->
+          <img
+            src="Starbucks/portfolio-images/starbucks-resized.webp"
+            alt=""
+            class="portfolio__img"
+          />
+          <div class="website">
+            <h3>Starbucks Landing Page</h3>
+          </div>
+        </a>
+
+        <!-- Portfolio item 2 -->
+        <a
+          href="/University-Website/portfolio-item-university.html"
+          class="portfolio__item"
+          target="_blank"
+        >
+          <!-- Img: 1200x800 -->
+          <img
+            src="University-Website/portfolio-images/uni.png"
+            alt=""
+            class="portfolio__img"
+          />
+          <div class="website">
+            <h3>University Page</h3>
+          </div>
+        </a>
+
+        <!-- Portfolio item 3 -->
+        <a
+          href="/Tesla-Website/portfolio-item-tesla.html"
+          class="portfolio__item"
+          target="_blank"
+        >
+          <!-- Img: 1200x800 -->
+          <img
+            src="Tesla-Website/portfolio-images/tesla.webp"
+            alt=""
+            class="portfolio__img"
+          />
+          <div class="website">
+            <h3>Tesla Website</h3>
+          </div>
+        </a>
+
+        <!-- Portfolio item 4 -->
+        <a
+          href="/Guess-The-Number-Game/portfolio-guess-the-number-game.html"
+          class="portfolio__item"
+          target="_blank"
+        >
+          <!-- Img: 1200x800 -->
+          <img
+            src="Guess-The-Number-Game/portfolio-img/small.jpeg"
+            alt=""
+            class="portfolio__img"
+          />
+          <div class="website">
+            <h3>Guess The Number Game</h3>
+          </div>
+        </a>
+
+        <!-- Portfolio item 5 -->
+        <a
+          href="/Calculator/portfolio-item-calculator.html"
+          class="portfolio__item"
+          target="_blank"
+        >
+          <!-- Img: 1200x800 -->
+          <img
+            src="Calculator/portfolio-img/calc.avif"
+            alt=""
+            class="portfolio__img"
+          />
+          <div class="website">
+            <h3>Calculator</h3>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <a href="mailto:kuba.mika16@gmail.com" class="footer__link"
+        >kuba.mika16@gmail.com</a
+      >
+      <ul class="social-list">
+        <li class="social-list__item">
+          <a href="#" class="social-list__link"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+        </li>
+        <li class="social-list__item">
+          <a href="#" class="social-list__link"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+        </li>
+        <li class="social-list__item">
+          <a href="#" class="social-list__link"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+        </li>
+      </ul>
+    </footer>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
