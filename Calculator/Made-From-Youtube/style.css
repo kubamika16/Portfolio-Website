@@ -1,0 +1,23 @@
+/* Kod który powinien znajdować się w każdym programie */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* ustawienie marginesu kalkulatora */
+  margin: 25px;
+}
+
+.calculator {
+  background: black;
+  /* Zaokrąglenie */
+  border-radius: 50px;
+  color: white;
+  /* Wysokość i szerokość kalkulatora w pixelach po zrobieniu screenshota z telefonu*/
+  height: 1218px;
+  width: 563px;
+  /* Padding 20 px, tzn. ustawienie wszystkiego w środku w odstępie od krawędzi czarnego bloku */
+  padding: 20px;
+}
