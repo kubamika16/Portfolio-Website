@@ -3,13 +3,18 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* user-select pozwala na to, że gdy kliknie się dany przycisk to tekst który tam się znajduje nie zostanie przypadkowo zaznaczony */
+  user-select: none;
 }
 
 body {
+  font-family: "Helvetiva Neue", sans-serif;
+
   /* ustawienie marginesu kalkulatora */
   margin: 25px;
 }
 
+/* Właściwości dla całego kalkulatora */
 .calculator {
   background: black;
   /* Zaokrąglenie */
@@ -20,4 +25,104 @@ body {
   width: 563px;
   /* Padding 20 px, tzn. ustawienie wszystkiego w środku w odstępie od krawędzi czarnego bloku */
   padding: 20px;
+  /* takie pozycjonowanie pozwoli na ustawienie białego iPhonowego paska na samym dole kalkulatora */
+  position: relative;
+}
+
+/* Właściwości dla bloku na samej górze (godzina i zdjęcie) */
+.top-container {
+  padding: 0 20px;
+  height: 250px;
+
+  /* flex i space-between pozwoliły na to, że teraz dwie rzeczy w divie są po dwóch stronach kalkulatora */
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Właściwości dla wyniku z działań */
+.display {
+  font-size: 130px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  height: 158px;
+  text-align: right;
+  margin-right: 20px;
+}
+
+/* Właściwości dla bloku w którym jest 19 przycisków */
+.buttons-container {
+  /* Grid pozwala na ustawienie wartości względem kolumn i wierszy */
+  display: grid;
+  /* Rows - 5 wierszy, dla których maksymalną szerokością będzie wielkość diva rodzica (czyli kalkulator). 1 fr pozwoli rozprowadzić przyciski równomiernie*/
+  grid-template-rows: repeat(5, 1fr);
+  /* Tak samo jak w powyższym przypadku wierszy, ale tym razem kolumny*/
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+/* Właściwości dla każdego poszczególnego przycisku */
+.button {
+  background-color: #333;
+  /* To zamieni przyciski z kwadratowych bloków na okrągłe */
+  border-radius: 50%;
+  font-size: 45px;
+  height: 110px;
+  width: 110px;
+
+  /* Dzięki tym trzem właściwościom tekst wewnątrz przycisków jest centralnie na środku */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  /* Właściwość 'transition' została dodana po dodaniu do klasy '.button:active' właściwości 'filter' */
+  transition: filter 0.3s;
+}
+
+/* Właściwości dla przycisków funkcji (ac, pm, %) */
+.button.function {
+  color: black;
+  background-color: #a5a5a5;
+}
+
+/* Właściwości dla operatorów */
+.button.operator {
+  background-color: #f1a33c;
+}
+
+/* Właściwości dla cyfry 0 */
+.button.number-0 {
+  width: 250px;
+  border-radius: 55px;
+  /* flex-start pozwoli na ustawienie tekstu po lewej stronie */
+  justify-content: flex-start;
+  padding-left: 43px;
+  /* grid-column jest bardzo ważne */
+  /* 1 - rozpoczęcie od pierwszej kolumny, / (slash) - wyznacza granice, span 2 - wyznacza przez ile kolumn powinien przechodzić przycisk */
+  /* innymi słowy: od 1, przez dodatkowe 2 (tak naprawdę przez dodatkowe 1, ale zawsze dodać 1) */
+  grid-column: 1 / span 2;
+  /* grid-column-start: 1;
+  grid-column-end: 3; */
+}
+
+/* Właściwości dla przycisku który został wciśnięty */
+.button:active,
+.button:focus {
+  /* Przycisk staje się jaśniejszy o 20% */
+  filter: brightness(120%);
+}
+
+/* Właściwości dla białego iPhonowego paska na samym dole kalkulatora */
+.bottom {
+  width: 200px;
+  height: 5px;
+  background-color: white;
+  border-radius: 4px;
+  /* Dzięki 'absolute' można ustawić pozycję elementu po swojemu */
+  position: absolute;
+  bottom: 10px;
+  /* Left 50% ustawia element na środku rodzica. Problem w tym, że od środka ustawiony jest początek elementu */
+  left: 50%;
+  /* Z tego powodu funkcja 'translateX' pozwala na przeniesienie połowy elementu w lewo */
+  transform: translateX(-50%);
 }
