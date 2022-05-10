@@ -40,7 +40,7 @@ body {
 }
 
 /* Właściwości dla wyniku z działań */
-.display {
+.value {
   font-size: 130px;
   font-weight: 300;
   margin-bottom: 20px;

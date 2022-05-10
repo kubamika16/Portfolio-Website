@@ -1,12 +1,16 @@
+////////////////////////////////////////////////////////////////
 // DOM Elements
 const hourEl = document.querySelector(".hour");
 const minuteEl = document.querySelector(".minute");
+const valueEl = document.querySelector(".value");
 
+////////////////////////////////////////////////////////////////
 // Szare przyciski
 const acEl = document.querySelector(".ac");
 const pmEl = document.querySelector(".pm");
 const percentEl = document.querySelector(".percent");
 
+////////////////////////////////////////////////////////////////
 // Pomarańczowe przyciski
 const additionEl = document.querySelector(".addition");
 const substractionEl = document.querySelector(".substraction");
@@ -14,6 +18,7 @@ const multiplicationEl = document.querySelector(".multiplication");
 const divisionEl = document.querySelector(".division");
 const equalEl = document.querySelector(".equal");
 
+////////////////////////////////////////////////////////////////
 // Cyfy
 const decimalEl = document.querySelector(".decimal");
 const number0El = document.querySelector(".number-0");
@@ -39,6 +44,108 @@ const numberElArray = [
   number9El,
 ];
 
+////////////////////////////////////////////////////////////////
+// Funkcje
+
+//Funkcja która zwraca rezultat z ekranu
+const getValueAsStr = () => {
+  const currentValueStr = valueEl.textContent;
+  // Zwracanie rezultatu. Najpierw liczba zostaje podzielona przecinkami i wrzucona do tablicy, a potem połączona. Pozwala to na usunięcie przecinków. Koniec końców przecinki zostaną dodane na ekran przez kod kilka linijek niżej (tam gdzie jest .toLocaleString() )
+  return currentValueStr.split(",").join("");
+};
+
+// Funkcja która pozwala zamienić zmienną typu String na zmienną typu liczbowego
+const getValueAsNum = () => {
+  return parseFloat(getValueAsStr());
+};
+
+// Funkcja która pozwala na ustawienie wartości rezultatu, zmieniając go jednocześnie na liczbę, dodając przecinki
+const setStrAsValue = (valueStr) => {
+  // Jeśli ostatnim wyrazem który wcisnęliśmy był przecinek
+  if (valueStr[valueStr.length - 1] === ".") {
+    // Do wyniku doda się przecinek
+    valueEl.textContent += ".";
+    return;
+  }
+
+  // Praca na działaniu po przecinku (.toLocaleString() działa dziwnie po przecinku, więc trzeba to naprawić)
+  const [wholeNumStr, decimalStr] = valueStr.split(".");
+  if (decimalStr) {
+    valueEl.textContent =
+      parseFloat(wholeNumStr).toLocaleString() + "." + decimalStr;
+  } else {
+    valueEl.textContent = parseFloat(wholeNumStr).toLocaleString();
+  }
+};
+
+// Funkcja która działa po wciśnięciu cyfr 0-9
+const handleNumberClick = (numStr) => {
+  // Przy każdymm kliknięciu w daną cyfrę, cyfra zapisywana jest do zmiennej 'currentValueStr'
+  const currentValueStr = getValueAsStr();
+
+  // Jeśli rezultat na ekranie zawiera tylko cyfrę 0
+  if (currentValueStr === "0") {
+    // To usuwa się to zero i zamienia na wciśniętą cyfrę
+    setStrAsValue(numStr);
+  } else {
+    // Zamiana wartości rezultatu. Wynik w rezultacie, dodać 'numStr' czyli cyfrę która została wciśnięta
+    // parseFloat() zamienia string na liczbę, dzięki temu .toLocaleString() dodaje przecinek po każdych 3 cyfrach
+    setStrAsValue(currentValueStr + numStr);
+  }
+};
+
+////////////////////////////////////////////////////////////////
+// Praca na Event Listenerach
+
+// Praca na przycisku 'AC'
+acEl.addEventListener("click", () => {
+  setStrAsValue("0");
+});
+
+// Praca na przycisku plus/minus
+pmEl.addEventListener("click", () => {
+  const currentValueNum = getValueAsNum();
+  const currentValueStr = getValueAsStr();
+
+  if (currentValueStr === "-0") {
+    setStrAsValue("0");
+    return;
+  }
+
+  if (currentValueNum >= 0) {
+    setStrAsValue("-" + currentValueStr);
+  } else {
+    setStrAsValue(currentValueStr.substring(1));
+  }
+});
+
+// Praca na przycisku procenta
+percentEl.addEventListener("click", () => {
+  const currentValueNum = getValueAsNum();
+  const newValueNum = currentValueNum / 100;
+  setStrAsValue(newValueNum.toString());
+});
+
+// Dodanie funkcji 'addEventListener' do każdego przycisku cyfr
+for (let i = 0; i < numberElArray.length; i++) {
+  const numberEl = numberElArray[i];
+
+  numberEl.addEventListener("click", () => {
+    handleNumberClick(i.toString());
+  });
+}
+
+// Praca na przycisku przecinka
+decimalEl.addEventListener("click", () => {
+  const currentValueStr = getValueAsStr();
+
+  if (!currentValueStr.includes(".")) {
+    setStrAsValue(currentValueStr + ".");
+  }
+});
+
+////////////////////////////////////////////////////////////////
+// Czas
 // Funkcja która ustawia czas dla kalkulatora
 const updateTime = () => {
   const currentTime = new Date();
@@ -48,9 +155,9 @@ const updateTime = () => {
   const currentMinute = currentTime.getMinutes();
 
   //   Gdybyśmy chcieli zamienić czas z 24h na 12h
-  if (currentHour > 12) {
-    currentHour -= 12;
-  }
+  // if (currentHour > 12) {
+  //   currentHour -= 12;
+  // }
 
   hourEl.textContent = currentHour.toString();
   // funkcja padStart działa tak: jeśli string posiada mniej niż 2 wyrazy, należy wtedy dodać 0 na początku stringu.
