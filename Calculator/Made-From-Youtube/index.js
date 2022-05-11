@@ -102,25 +102,9 @@ const handleNumberClick = (numStr) => {
   }
 };
 
-const getResultOfOperationAsStr = () => {};
-
-// Funkcja która pomaga na pracy przy dzieleniu, mnożeniu, odejmowaniu i dodawaniu
-const handleOperatorClick = (operation) => {
-  const currentValueStr = getValueAsStr();
+// Funkcja która wykonuje obliczenia dwóch liczb
+const getResultOfOperationAsStr = () => {
   const currentValueNum = getValueAsNum();
-
-  // Gdy wciśniemy znak operandu, a nie było jeszcze żadnej zapisanej wartości (gdy nie było zapisanej pierwszej liczby)
-  if (!valuStrInMemory) {
-    // Pobieramy liczbę z rezultatu i zapisujemy ją w zmiennej 'valueStrInMemory'
-    valuStrInMemory = currentValueStr;
-    // Zapisanie danego wciśniętego operatora
-    operatorInMemory = operation;
-    // Ustawienie w rezultacie znaku zero (jest to znak że możemy teraz wpisać drugą liczbę do działania)
-    setStrAsValue("0");
-    return;
-  }
-
-  // Rozwiązanie działań
   const valueNumInMemory = parseFloat(valueStrInMemory);
   let newValueNum;
   if (operatorInMemory === "addition") {
@@ -133,8 +117,26 @@ const handleOperatorClick = (operation) => {
     newValueNum = valueNumInMemory / currentValueNum;
   }
 
+  return newValueNum.toString();
+};
+
+// Funkcja która pomaga na pracy przy dzieleniu, mnożeniu, odejmowaniu i dodawaniu
+const handleOperatorClick = (operation) => {
+  const currentValueStr = getValueAsStr();
+
+  // Gdy wciśniemy znak operandu, a nie było jeszcze żadnej zapisanej wartości (gdy nie było zapisanej pierwszej liczby)
+  if (!valueStrInMemory) {
+    // Pobieramy liczbę z rezultatu i zapisujemy ją w zmiennej 'valueStrInMemory'
+    valueStrInMemory = currentValueStr;
+    // Zapisanie danego wciśniętego operatora
+    operatorInMemory = operation;
+    // Ustawienie w rezultacie znaku zero (jest to znak że możemy teraz wpisać drugą liczbę do działania)
+    setStrAsValue("0");
+    return;
+  }
+
   // Zapisanie naszego działania (zamiana go na string)
-  valueStrInMemory = newValueNum.toString();
+  valueStrInMemory = getResultOfOperationAsStr();
   // Ustawienie operatora
   operatorInMemory = operation;
   // Zresetowanie wyświetlanego wyniku
@@ -168,6 +170,16 @@ pmEl.addEventListener("click", () => {
   }
 });
 
+// Praca na przycisku procenta
+percentEl.addEventListener("click", () => {
+  const currentValueNum = getValueAsNum();
+  const newValueNum = currentValueNum / 100;
+  setStrAsValue(newValueNum.toString());
+
+  valueNumInMemory = null;
+  operatorInMemory = null;
+});
+
 ////////////////////////////////////////////////////////////////
 // Praca na Operatorach (pomarańczowe przyciski)
 
@@ -195,18 +207,10 @@ divisionEl.addEventListener("click", () => {
 equalEl.addEventListener("click", () => {
   // Gdy posiadamy już zapisane wartości, wykonujemy działania (dodawanie, odejmowanie, itd.)
   if (valueStrInMemory) {
-    //
+    setStrAsValue(getResultOfOperationAsStr());
+    valueStrInMemory = null;
+    operatorInMemory = null;
   }
-});
-
-// Praca na przycisku procenta
-percentEl.addEventListener("click", () => {
-  const currentValueNum = getValueAsNum();
-  const newValueNum = currentValueNum / 100;
-  setStrAsValue(newValueNum.toString());
-
-  valueNumInMemory = null;
-  operatorInMemory = null;
 });
 
 // Dodanie funkcji 'addEventListener' do każdego przycisku cyfr
