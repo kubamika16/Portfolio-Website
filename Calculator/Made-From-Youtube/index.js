@@ -48,7 +48,7 @@ const numberElArray = [
 // Zmienne
 
 // Ta zmienna pozwala na zapisanie w pamięci rezultatu z poprzedniego działania, gdy np. ponownie klikalibyśmy kolejny operand
-let valuStrInMemory = null;
+let valueStrInMemory = null;
 // Zmienna operatora którą wcisnęliśmy
 let operatorInMemory = null;
 
@@ -256,3 +256,45 @@ setInterval(updateTime, 1000);
 
 // Należy wywołać funkcję 'updateTime' przed 'setInterval', ponieważ 'setInterval' działa DOPIERO po jednej sekundzie
 updateTime();
+
+// Rozwiązanie działań poprzez klawiaturę
+document.addEventListener("keydown", (e) => {
+  console.log(e.key);
+  // Gdy na klawiaturze wciśnie się znaki od 1 do 9
+  const numberEl = Number(e.key);
+  if (numberEl >= 0 && numberEl <= 9) {
+    console.log(numberEl);
+    handleNumberClick(numberEl.toString());
+  }
+
+  // BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG
+  // Dokończyć działania w kalkulatorze za pomocą klawiatury
+
+  // Gdy na klawiaturze wciśnie się poszczególne znaki (operatorów itd.)
+  switch (e.key) {
+    case "Enter":
+      if (valueStrInMemory) {
+        setStrAsValue(getResultOfOperationAsStr());
+        valueStrInMemory = null;
+        operatorInMemory = null;
+      }
+      break;
+    case "Backspace":
+      setStrAsValue("0");
+      valueStrInMemory = null;
+      operatorInMemory = null;
+      break;
+    case "+":
+      console.log("Wcisnąłeś plus");
+      break;
+    case "-":
+      console.log("Wcisnąłeś minus");
+      break;
+    case "*":
+      console.log("Wcisnąłeś mnożenie");
+      break;
+    case "/":
+      console.log("Wcisnąłeś dzielenie");
+      break;
+  }
+});
