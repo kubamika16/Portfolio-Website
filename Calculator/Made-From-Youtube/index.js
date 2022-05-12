@@ -55,9 +55,17 @@ let operatorInMemory = null;
 ////////////////////////////////////////////////////////////////
 // Funkcje
 
+// Ustawienie czcionki rezultatu
+const fontValue = (fontSize, marginBottom, marginTop) => {
+  valueEl.style.fontSize = fontSize;
+  valueEl.style.marginBottom = marginBottom;
+  valueEl.style.marginTop = marginTop;
+};
+
 //Funkcja która zwraca rezultat z ekranu
 const getValueAsStr = () => {
   const currentValueStr = valueEl.textContent;
+  // console.log(currentValueStr.split(",").join(""));
   // Zwracanie rezultatu. Najpierw liczba zostaje podzielona przecinkami i wrzucona do tablicy, a potem połączona. Pozwala to na usunięcie przecinków. Koniec końców przecinki zostaną dodane na ekran przez kod kilka linijek niżej (tam gdzie jest .toLocaleString() )
   return currentValueStr.split(",").join("");
 };
@@ -69,6 +77,22 @@ const getValueAsNum = () => {
 
 // Funkcja która pozwala na ustawienie wartości rezultatu, zmieniając go jednocześnie na liczbę, dodając przecinki
 const setStrAsValue = (valueStr) => {
+  // Zmiana czcionki rezultatu. Im więcej liczb tym mniejsza czcionka
+  switch (valueStr.length) {
+    case 7:
+      fontValue("100px", "0px", "20px");
+      break;
+    case 9:
+      fontValue("90px", "0px", "20px");
+      break;
+    case 10:
+      fontValue("80px", "0px", "20px");
+      break;
+    case 11:
+      fontValue("70px", "0px", "20px");
+      break;
+  }
+
   // Jeśli ostatnim wyrazem który wcisnęliśmy był przecinek
   if (valueStr[valueStr.length - 1] === ".") {
     // Do wyniku doda się przecinek
@@ -84,21 +108,30 @@ const setStrAsValue = (valueStr) => {
   } else {
     valueEl.textContent = parseFloat(wholeNumStr).toLocaleString();
   }
+
+  // Dodanie informacji o zbyt dużej liczbie
+  if (valueStr.length > 11) {
+    fontValue("70px", "0px", "20px");
+    valueEl.textContent = "Liczba za duża";
+  }
 };
 
 // Funkcja która działa po wciśnięciu cyfr 0-9
 const handleNumberClick = (numStr) => {
   // Przy każdymm kliknięciu w daną cyfrę, cyfra zapisywana jest do zmiennej 'currentValueStr'
   const currentValueStr = getValueAsStr();
-
-  // Jeśli rezultat na ekranie zawiera tylko cyfrę 0
-  if (currentValueStr === "0") {
-    // To usuwa się to zero i zamienia na wciśniętą cyfrę
-    setStrAsValue(numStr);
-  } else {
-    // Zamiana wartości rezultatu. Wynik w rezultacie, dodać 'numStr' czyli cyfrę która została wciśnięta
-    // parseFloat() zamienia string na liczbę, dzięki temu .toLocaleString() dodaje przecinek po każdych 3 cyfrach
-    setStrAsValue(currentValueStr + numStr);
+  // Jeśli liczba na ekranie jest większa od 9 nie powinno być możliwości dodawania kolejnych wyrazów
+  if (currentValueStr.length <= 8) {
+    console.log(currentValueStr);
+    // Jeśli rezultat na ekranie zawiera tylko cyfrę 0
+    if (currentValueStr === "0") {
+      // To usuwa się to zero i zamienia na wciśniętą cyfrę
+      setStrAsValue(numStr);
+    } else {
+      // Zamiana wartości rezultatu. Wynik w rezultacie, dodać 'numStr' czyli cyfrę która została wciśnięta
+      // parseFloat() zamienia string na liczbę, dzięki temu .toLocaleString() dodaje przecinek po każdych 3 cyfrach
+      setStrAsValue(currentValueStr + numStr);
+    }
   }
 };
 
@@ -132,6 +165,7 @@ const handleOperatorClick = (operation) => {
     operatorInMemory = operation;
     // Ustawienie w rezultacie znaku zero (jest to znak że możemy teraz wpisać drugą liczbę do działania)
     setStrAsValue("0");
+    fontValue("130px", "20px", "0px");
     return;
   }
 
@@ -151,6 +185,7 @@ acEl.addEventListener("click", () => {
   setStrAsValue("0");
   valueStrInMemory = null;
   operatorInMemory = null;
+  fontValue("130px", "20px", "0px");
 });
 
 // Praca na przycisku plus/minus
@@ -259,16 +294,11 @@ updateTime();
 
 // Rozwiązanie działań poprzez klawiaturę
 document.addEventListener("keydown", (e) => {
-  console.log(e.key);
   // Gdy na klawiaturze wciśnie się znaki od 1 do 9
   const numberEl = Number(e.key);
   if (numberEl >= 0 && numberEl <= 9) {
-    console.log(numberEl);
     handleNumberClick(numberEl.toString());
   }
-
-  // BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG
-  // Dokończyć działania w kalkulatorze za pomocą klawiatury
 
   // Gdy na klawiaturze wciśnie się poszczególne znaki (operatorów itd.)
   switch (e.key) {
@@ -283,18 +313,26 @@ document.addEventListener("keydown", (e) => {
       setStrAsValue("0");
       valueStrInMemory = null;
       operatorInMemory = null;
+      fontValue("130px", "20px", "0px");
+      break;
+    case ".":
+      const currentValueStr = getValueAsStr();
+
+      if (!currentValueStr.includes(".")) {
+        setStrAsValue(currentValueStr + ".");
+      }
       break;
     case "+":
-      console.log("Wcisnąłeś plus");
+      handleOperatorClick("addition");
       break;
     case "-":
-      console.log("Wcisnąłeś minus");
+      handleOperatorClick("substraction");
       break;
     case "*":
-      console.log("Wcisnąłeś mnożenie");
+      handleOperatorClick("multiplication");
       break;
     case "/":
-      console.log("Wcisnąłeś dzielenie");
+      handleOperatorClick("division");
       break;
   }
 });

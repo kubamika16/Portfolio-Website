@@ -47,6 +47,8 @@ body {
   height: 158px;
   text-align: right;
   margin-right: 20px;
+
+  position: relative;
 }
 
 /* Właściwości dla bloku w którym jest 19 przycisków */
