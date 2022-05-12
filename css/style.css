@@ -566,6 +566,11 @@ header {
   margin: 0 auto;
 }
 
+li {
+  padding: 0.1em 2em;
+  list-style-position: inside;
+}
+
 .portfolio-item-individual p {
   max-width: 800px;
   margin-left: auto;

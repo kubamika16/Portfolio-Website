@@ -1,5 +1,5 @@
 // BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG
-// Gdy wcisnę cyfrę (np. 9), potem znak minusa, a potem % to wychodzi zła liczba. Nie potrafię poprawić tego problemuz
+// Gdy wcisnę cyfrę (np. 9), potem znak minusa, a potem % to wychodzi zła liczba. Nie potrafię poprawić tego problemu
 
 const allButtons = document.querySelectorAll(".button");
 
@@ -140,7 +140,6 @@ equal.addEventListener("click", () => {
     });
 
     // Rozwiązanie równania
-
     equation = parseFloat(
       eval(
         [firstNumber.join(""), queryOperand, secondNumber.join("")].join("")
