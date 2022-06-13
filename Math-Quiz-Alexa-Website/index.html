@@ -1,3 +1,8 @@
+<!-- 1 sesja w KRK (11/6) -->
+
+<!-- TO DO -->
+<!-- Zamienić klasy na takie jak w swoim portfolio (czyli np. zamiast content będzie intro, itd...) -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,6 +10,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Math Quiz</title>
+
+    <!-- Dzięki temu strona będzie wyglądać tak samo na kazdej przeglądarce -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"
+    />
+
+    <!-- Ikony -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+      integrity="sha256-46qynGAkLSFpVbEBog43gvNhffOj+BmwXdxFgVK/Kvc"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/79a5f6bfc5.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;900&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -23,14 +54,17 @@
         </ul>
       </div>
     </header>
-    <section>
-      <div class="content">
-        <div class="textBox">
-          <h2>Get better in math with Alexa</h2>
-          <a href="">Try it for free!</a>
-        </div>
-        <div class="imgBox"><img src="" alt="Głośnik-Alexy" /></div>
-      </div>
+    <section class="intro">
+      <h1 class="section__title section__title--intro">
+        Get better in math
+        <strong>with Alexa</strong>
+      </h1>
+      <a class="game__link" href="">Try it for free!</a>
+      <img
+        class="intro__img"
+        src="/Math-Quiz-Alexa-Website/img/alexa.png"
+        alt="Głośnik-Alexy"
+      />
     </section>
   </body>
 </html>
