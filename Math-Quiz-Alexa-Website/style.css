@@ -79,6 +79,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 2% 6%;
+  background: white;
+  z-index: 1;
 }
 
 .nav-links {
@@ -118,6 +120,10 @@ img {
   max-width: 100%;
 }
 
+/* ------------------------ */
+/* INTRO SECTION */
+/* ------------------------ */
+
 .section__title {
   margin-bottom: 0.25em;
 }
@@ -150,6 +156,42 @@ img {
 .intro__img {
   grid-area: img;
 }
+
+/* ------------------------ */
+/* SAMPLE SECTION */
+/* ------------------------ */
+.sample {
+  background-image: url(/Math-Quiz-Alexa-Website/img/VUI-background.webp);
+  background-color: rgb(95, 95, 95);
+  /* Dzięki temu zdjęcie się nie powiela, tylko jest jedno na całego diva */
+  background-size: cover;
+  /* Dzięki temu background color i zdjęcie łączą się ze sobą dając ciekawy efekt */
+  background-blend-mode: multiply;
+  color: var(--clr-light);
+  text-align: center;
+}
+
+.section__title--sample::after {
+  /* Dla rzeczy 'sudo' zawsze trzeba napisać 'content' */
+  content: "";
+  display: block;
+  width: 2em;
+  height: 1px;
+  margin: 0.5em auto 1em;
+  background: var(--clr-light);
+}
+
+.example--img {
+  margin-bottom: 3em;
+}
+
+.example--description {
+  text-align: left;
+}
+
+/* ------------------------ */
+/* MEDIA */
+/* ------------------------ */
 
 @media (min-width: 600px) {
   .intro {
@@ -187,11 +229,22 @@ img {
   }
 
   .section__title--intro {
-    font-size: 2.3em;
+    font-size: 3em;
   }
 
   .game__link {
     font-size: var(--fs-h4);
+  }
+
+  .example {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .example--description {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 2em;
   }
 }
 
@@ -201,7 +254,7 @@ img {
   }
 
   .section__title--intro {
-    font-size: 3em;
+    font-size: 3.5em;
   }
 
   .game__link {
