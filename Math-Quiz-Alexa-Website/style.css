@@ -160,6 +160,7 @@ img {
 /* ------------------------ */
 /* SAMPLE SECTION */
 /* ------------------------ */
+
 .sample {
   background-image: url(/Math-Quiz-Alexa-Website/img/VUI-background.webp);
   background-color: rgb(95, 95, 95);
@@ -192,6 +193,13 @@ img {
 /* ------------------------ */
 /* MEDIA */
 /* ------------------------ */
+
+/* ------------------------ */
+/* LEVELS SECTION */
+/* ------------------------ */
+.levels {
+  text-align: center;
+}
 
 @media (min-width: 600px) {
   .intro {
