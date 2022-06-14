@@ -110,6 +110,7 @@ section {
   align-items: center;
   position: relative;
   width: 100%;
+  text-align: center;
 }
 
 img {
@@ -191,16 +192,83 @@ img {
 }
 
 /* ------------------------ */
-/* MEDIA */
-/* ------------------------ */
-
-/* ------------------------ */
 /* LEVELS SECTION */
 /* ------------------------ */
 .levels {
   text-align: center;
 }
 
+.level-types {
+  margin-top: 0.5em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-row-gap: 0.5em;
+  grid-column-gap: 5em;
+}
+
+.level--col {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  background: black;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+
+  flex-basis: 32%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.layer-easy,
+.layer-medium,
+.layer-hard,
+.layer-extreme {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+
+.layer-easy:hover {
+  background-color: rgb(19, 144, 0);
+}
+
+.layer-medium:hover {
+  background-color: rgb(255, 235, 21);
+}
+
+.layer-hard:hover {
+  background-color: rgb(255, 174, 0);
+}
+
+.layer-extreme:hover {
+  background-color: rgb(255, 0, 0);
+}
+
+.level--col h3 {
+  padding-top: 0.5em;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.level--col:hover h3 {
+  color: black;
+  padding-top: 0.5em;
+  bottom: 80%;
+  opacity: 1;
+}
+
+/* ------------------------ */
+/* MEDIA */
+/* ------------------------ */
 @media (min-width: 600px) {
   .intro {
     display: grid;
