@@ -1,3 +1,5 @@
+<!-- 1 funckja w samolocie (17/06/2022) -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,14 +42,18 @@
     <header>
       <a href="" class="logo">Math Quiz</a>
 
+      <div class="backdrop"></div>
+
       <div class="nav-links" id="navLinks">
+        <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
         <ul>
-          <li><a href="">ABOUT</a></li>
-          <li><a href="">LEVELS</a></li>
-          <li><a href="">FUNCTIONS</a></li>
+          <li><a href="#sample">ABOUT</a></li>
+          <li><a href="#levels">LEVELS</a></li>
+          <li><a href="#feautures">FEAUTURES</a></li>
           <li><a href="">TRY IT NOW</a></li>
         </ul>
       </div>
+      <i class="fa-solid fa-bars" onclick="showMenu()"></i>
     </header>
     <section class="intro">
       <h1 class="section__title section__title--intro">
@@ -61,7 +67,7 @@
         alt="Głośnik-Alexy"
       />
     </section>
-    <section class="sample">
+    <section class="sample" id="sample">
       <h2 class="section__title section__title--sample">
         Jak działa Math Quiz
       </h2>
@@ -81,7 +87,7 @@
         </div>
       </div>
     </section>
-    <section class="levels">
+    <section class="levels" id="levels">
       <h2 class="section__title section__title--levels">Challange Yourself</h2>
       <p class="section__subtitle section__subtitle--levels">
         This game has all levels you need
@@ -109,11 +115,25 @@
         </div>
       </div>
     </section>
-    <section class="functions">
+    <section class="functions" id="feautures">
       <h2 class="section__title section__title--levels">Features</h2>
       <p class="section__subtitle section__subtitle--levels">
         Explore cool functions that motivates you to play!
       </p>
+      <!-- 1. Run Streak -->
+      <div class="function-types"></div>
+      <!-- 2. Saving Progress -->
+      <!-- 3. *Next* - Dunno -->
     </section>
+    <section class="contact">
+      <h2 class="section__title section__title--contact">Contact</h2>
+      <p class="section__subtitle section__subtitle--levels">
+        Message us if you have a feedback or question about our game!
+      </p>
+      <a href="mailto:kuba.mika16@gmail.com" class="footer__link"
+        >kuba.mika16@gmail.com</a
+      >
+    </section>
+    <script src="index.js"></script>
   </body>
 </html>

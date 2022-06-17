@@ -1,6 +1,3 @@
-/* TO DO */
-/* Zrobić żeby zdjęcie nie wychodziło za diva*/
-
 * {
   margin: 0;
   padding: 0;
@@ -78,7 +75,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2% 6%;
+  padding: 1% 6%;
   background: white;
   z-index: 1;
 }
@@ -124,6 +121,10 @@ img {
 /* ------------------------ */
 /* INTRO SECTION */
 /* ------------------------ */
+
+.intro {
+  text-align: left;
+}
 
 .section__title {
   margin-bottom: 0.25em;
@@ -266,9 +267,70 @@ img {
   opacity: 1;
 }
 
+.fa-solid {
+  display: none;
+}
+
+/* ------------------------ */
+/* CONTACT */
+/* ------------------------ */
+.contact {
+  background-color: black;
+  color: white;
+}
+
+.footer__link {
+  display: block;
+  margin-top: 1em;
+  color: white;
+}
+
 /* ------------------------ */
 /* MEDIA */
 /* ------------------------ */
+
+@media (max-width: 600px) {
+  .nav-links ul li {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    background: var(--clr-accent);
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: -200px;
+    text-align: left;
+    z-index: 1000;
+    transition: 1s;
+  }
+
+  .fa-solid {
+    display: block;
+    color: black;
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .nav-links ul {
+    padding: 30px;
+  }
+
+  .backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(5px);
+  }
+
+  .backdrop.active {
+    display: block;
+  }
+}
+
 @media (min-width: 600px) {
   .intro {
     display: grid;
